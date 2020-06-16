@@ -62,6 +62,10 @@ export function activate(context: vscode.ExtensionContext) {
 	server.listen(sockname, () => {
 		console.log(`listening on ${sockname}`);
 	});
+
+	for (let terminal of vscode.window.terminals) {
+		terminal.sendText(`export VSCODE_TERMINAL_SOCKET=${sockname}`);
+	}
 	
 	vscode.window.onDidOpenTerminal((terminal) => {
 		terminal.sendText(`export VSCODE_TERMINAL_SOCKET=${sockname}`);

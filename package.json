@@ -2,7 +2,7 @@
 	"name": "launch-terminal-cmd",
 	"displayName": "launch-terminal-cmd",
 	"description": "Launch terminal with given cmd by cmdline. ",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "ohk990102",
 	"engines": {
 		"vscode": "^1.46.0"
@@ -54,5 +54,9 @@
 		"vscode-test": "^1.3.0"
 	},
 	"dependencies": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ohk990102/vscode-launch-terminal-cmd.git"
 	}
 }
