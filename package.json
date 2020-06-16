@@ -1,0 +1,58 @@
+{
+	"name": "launch-terminal-cmd",
+	"displayName": "launch-terminal-cmd",
+	"description": "Launch terminal with given cmd by cmdline. ",
+	"version": "0.0.1",
+	"publisher": "ohk990102",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"*"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Launch Terminal Cmd",
+			"properties": {
+				"launch-terminal-cmd.defaultLaunchType": {
+					"type": "string",
+					"default": "split",
+					"enum": ["split", "new"],
+					"enumDescriptions": [
+						"Opens a terminal by splitting active terminal window. ",
+						"Opens a new terminal. "
+					],
+					"description": "Defines way to open up a terminal. "
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.46.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+	}
+}
